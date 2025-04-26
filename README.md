@@ -9,35 +9,6 @@ A Python-based microservice application that converts video files to audio forma
 - **Gateway Service**: API endpoints (login/upload/download)
 - **Notification Service**: Email alerts on conversion completion
 
-## Prerequisites
-
-- Kubernetes cluster (EKS)
-- Helm
-- Docker
-- Python 3
-- AWS CLI v2
-- kubectl
-
-## Deployment
-
-1. **Install Databases**:
-   ```bash
-   # MongoDB
-   helm install mongo ./Helm_charts/MongoDB
-  
-   # PostgreSQL
-   helm install postgres ./Helm_charts/Postgres
-   ```
-
-2. **Configure Databases**:
-   - Create auth table in PostgreSQL
-   - Set up RabbitMQ queues (mp3, video)
-
-3. **Deploy Microservices**:
-   ```bash
-   kubectl apply -f ./src/[service-name]/manifest/
-   ```
-
 ## API Usage
 
 1. **Login**:
